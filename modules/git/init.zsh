@@ -10,6 +10,7 @@ if (( ! $+commands[git] )); then
   return 1
 fi
 
-# Source module files.
-source "${0:h}/alias.zsh"
+if ! zstyle -t ':prezto:module:git' noalias; then
+  source "${0:h}/alias.zsh"
+fi
 
