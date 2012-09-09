@@ -21,21 +21,21 @@ fi
 # Sets the GNU Screen title.
 function set-screen-title {
   if [[ "$TERM" == screen* ]]; then
-    printf "\ek%s\e\\" ${(V)argv}
+    print -f "\ek%s\e\\" ${(V)argv}
   fi
 }
 
 # Sets the terminal window title.
 function set-window-title {
   if [[ "$TERM" == ((x|a|ml|dt|E)term*|(u|)rxvt*) ]]; then
-    printf "\e]2;%s\a" ${(V)argv}
+    print -f "\e]2;%s\a" ${(V)argv}
   fi
 }
 
 # Sets the terminal tab title.
 function set-tab-title {
   if [[ "$TERM" == ((x|a|ml|dt|E)term*|(u|)rxvt*) ]]; then
-    printf "\e]1;%s\a" ${(V)argv}
+    print -f "\e]1;%s\a" ${(V)argv}
   fi
 }
 
@@ -81,7 +81,7 @@ function set-title-precmd {
   if zstyle -t ':prezto:module:terminal' auto-title; then
     if [[ "$TERM_PROGRAM" == 'Apple_Terminal' ]]; then
       # Set the current working directory in Apple Terminal.
-      printf '\e]7;%s\a' "file://$HOST${PWD// /%20}"
+      print -f '\e]7;%s\a' "file://$HOST${PWD// /%20}"
     else
       set-window-title "${(%):-%~}"
       for kind in tab screen; do
