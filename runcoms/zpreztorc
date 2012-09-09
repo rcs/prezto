@@ -40,6 +40,7 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'git' \
   'completion' \
+  'ruby' \
   'prompt'
 
 # Set the prompt theme to load.
@@ -47,3 +48,4 @@ zstyle ':prezto:load' pmodule \
 # Auto set to 'off' on dumb terminals.
 zstyle ':prezto:module:prompt' theme 'rcs'
 
+zstyle ':prezto:module:git' noalias 'true'
