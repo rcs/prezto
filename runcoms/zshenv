@@ -78,6 +78,7 @@ unset path_file
 path=(
   ./bin
   $HOME/bin
+  $HOME/.dotfiles/bin
   $HOME/Developer/{bin,sbin}
   /usr/local/{bin,sbin}
   /usr/{bin,sbin}

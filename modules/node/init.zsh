@@ -4,6 +4,19 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
+# Load NVM into the shell session.
+if [[ -s "$HOME/.nvm/nvm.sh" ]]; then
+  source "$HOME/.nvm/nvm.sh"
+
+  if [[ -s "$HOME/.nvm/bash_completion" ]]; then
+    if autoloadable bashcompinit; then
+
+      autoload bashcompinit
+      bashcompinit
+      source "$HOME/.nvm/bash_completion"
+    fi
+  fi
+fi
 
 # Return if requirements are not found.
 if (( ! $+commands[node] )); then
