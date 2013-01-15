@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='vim'
+export VISUAL='open -a MacVim'
 export PAGER='less'
 
 #
@@ -102,3 +102,5 @@ if [[ -d "$TMPDIR" ]]; then
   fi
 fi
 
+export PATH="zprof:$HOME/.rbenv/bin:$PATH/:$HOME/Developer/share/python"
+eval "$(rbenv init -)"
